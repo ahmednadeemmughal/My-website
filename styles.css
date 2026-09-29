@@ -1,0 +1,94 @@
+:root{--ink:#173a35;--muted:#788682;--line:#e4e9e4;--cream:#fcfbf7;--paper:#fffdf5;--gold:#b98532;--mint:#e8f0e8;--green:#0b453c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f4f6f2;color:var(--ink);font-family:"DM Sans",sans-serif}
+.app-shell{min-height:100vh;display:flex}
+.sidebar{width:260px;background:#fff;border-right:1px solid var(--line);padding:31px 20px 22px;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:22px;font-weight:700;padding:0 9px}
+.brand-mark{width:32px;height:32px;border-radius:10px;background:var(--green);color:#f4d99a;display:grid;place-items:center;font-family:"Noto Naskh Arabic",serif;font-size:23px}
+.sidebar nav{margin-top:52px;display:grid;gap:7px}
+.nav-item{padding:13px 14px;border-radius:10px;color:#77847f;text-decoration:none;font-size:14px;font-weight:600;display:flex;gap:13px;align-items:center}
+.nav-item span{width:17px;text-align:center;font-size:19px;font-weight:400}
+.nav-item.active{color:var(--green);background:#e8f0e8}
+.sidebar-foot{margin-top:auto}
+.daily{background:#fcf7e9;border-radius:12px;padding:14px;display:flex;gap:11px;align-items:center}
+.sun{color:#ba8a37;font-size:23px}
+.daily small{display:block;color:#8d8b80;font-size:11px;margin-bottom:2px}
+.daily strong{font-size:12px}
+.profile{border:0;background:none;width:100%;margin-top:21px;padding:5px;display:flex;align-items:center;gap:9px;color:#39524c;font:600 12px inherit}
+.avatar{width:28px;height:28px;background:#d8e5d9;color:#376657;border-radius:50%;display:grid;place-items:center;font-size:9px}
+.profile b{margin-left:auto;font-size:16px;font-weight:400}
+.reader{margin-left:260px;width:calc(100% - 260px);min-height:100vh;display:flex;flex-direction:column}
+.topbar{height:76px;padding:0 42px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:#fff}
+.crumb{display:flex;gap:10px;align-items:center;font-size:13px;color:#8a9692}
+.crumb b{font-weight:400;color:#c3cbc7}
+.crumb strong{color:var(--ink)}
+.top-actions{display:flex;gap:10px;align-items:center}
+.outline-button,.icon-button,.text-button{border:0;background:none;color:var(--ink);font:500 13px inherit;cursor:pointer}
+.outline-button{border:1px solid #dce4de;padding:9px 13px;border-radius:8px}
+.outline-button span{color:#63776f;margin-right:4px}
+.icon-button{width:34px;height:34px;border-radius:8px;font-size:21px}
+.icon-button:hover{background:#eff3ef}
+.mobile-menu{display:none}
+.reading-area{width:min(790px,calc(100% - 52px));margin:0 auto;padding:48px 0 32px}
+.chapter-card{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:31px}
+.eyebrow{font-size:10px;letter-spacing:1.15px;color:#82908a;font-weight:700;margin:0 0 8px}
+.chapter-intro h1{font-size:27px;margin:0 0 7px;letter-spacing:-.6px}
+.chapter-intro h1 span{font-family:"Noto Naskh Arabic",serif;font-size:27px;color:#607a71;font-weight:500;margin-left:8px}
+.chapter-intro>p:last-child{font-size:13px;color:#87938e;margin:0}
+.progress-wrap{width:160px;padding-bottom:3px}
+.progress-copy{display:flex;justify-content:space-between;color:#87938e;font-size:10px;margin-bottom:8px}
+.progress{height:4px;background:#e3e9e4;border-radius:10px;overflow:hidden}
+.progress i{display:block;width:10%;height:100%;background:#7eaa90;border-radius:inherit}
+.mushaf{min-height:690px;position:relative;padding:27px 68px 21px;border:1px solid #ded8c6;background:var(--paper);box-shadow:0 10px 26px #46635510;color:#272f29;overflow:hidden}
+.mushaf:before,.mushaf:after{content:"";position:absolute;border:1px solid #e0cfa7;inset:8px;pointer-events:none}
+.mushaf:after{inset:12px;border-color:#f0e6cf}
+.mushaf-top,.mushaf-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;color:#8e7039;font-family:"Noto Naskh Arabic",serif;font-size:13px;border-bottom:1px solid #dfc99c;padding-bottom:8px}
+.mushaf-bottom{border-top:1px solid #dfc99c;border-bottom:0;padding:8px 0 0;font-size:12px}
+.verses{position:relative;z-index:1;text-align:right;padding:14px 4px 8px;min-height:580px;display:flex;flex-direction:column;justify-content:space-around}
+.verses p{margin:0;font:500 19px/1.35 "Noto Naskh Arabic",serif;direction:rtl}
+.verses em{font-style:normal;display:inline-grid;place-items:center;color:#937233;border:1px solid #c7a35e;border-radius:50%;width:16px;height:16px;font-size:9px;vertical-align:middle;margin-right:7px}
+.verses .divider{text-align:center;color:#ad873e;font-size:14px;letter-spacing:1px}
+.ornament{position:absolute;z-index:1;top:43px;font:28px "Noto Naskh Arabic",serif;color:#b88b3b}
+.ornament.left{left:28px}
+.ornament.right{right:28px}
+.translation{margin:23px 0 0;padding:21px 23px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.translation-head{display:flex;justify-content:space-between;align-items:flex-start}
+.translation h2{font-size:14px;margin:0}
+.translation>p{margin:17px 0 0;color:#596963;font:18px/1.55 Georgia,serif}
+.text-button{color:#487461;font-weight:600;font-size:12px}
+.page-controls{margin-top:auto;padding:20px 42px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:20px;background:#fff}
+.page-button{border:0;background:transparent;color:#356653;font:600 12px inherit;padding:8px 12px;cursor:pointer}
+.page-button:disabled{color:#b7c1bc;cursor:not-allowed}
+.page-number{border:1px solid #dce5de;background:#fff;border-radius:7px;padding:7px 12px;color:var(--ink);font:600 12px inherit}
+.page-number small{color:#8a9791}
+@media(max-width:800px){.sidebar{display:none}
+.reader{margin-left:0;width:100%}
+.topbar{height:64px;padding:0 17px}
+.mobile-menu{display:block}
+.top-actions .outline-button{display:none}
+.top-actions{gap:3px}
+.reading-area{width:min(100% - 28px,650px);padding-top:29px}
+.chapter-card{margin-bottom:23px}
+.chapter-intro h1{font-size:23px}
+.chapter-intro h1 span{font-size:22px}
+.progress-wrap{width:105px}
+.mushaf{padding:23px 38px 18px;min-height:610px}
+.verses{min-height:510px}
+.verses p{font-size:17px}
+.ornament.left{left:15px}
+.ornament.right{right:15px}
+.page-controls{padding:14px 17px}
+.page-button span{display:none}
+}
+@media(max-width:440px){.crumb{font-size:12px}
+.top-actions .icon-button:last-child{display:none}
+.chapter-card{display:block}
+.progress-wrap{width:100%;margin-top:19px}
+.mushaf{padding-left:31px;padding-right:31px}
+.mushaf-top{font-size:10px}
+.verses p{font-size:15px}
+.translation{padding:17px}
+.translation>p{font-size:16px}
+}
+
